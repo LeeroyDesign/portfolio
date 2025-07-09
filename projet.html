@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes Projets</title>
+  <style>
+    :root {
+            --vert-principal: #000000;
+            --vert-secondaire: #000000;
+            --vert-clair: #072c3b;
+            --texte-foncé: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, var(--vert-clair), #000000);
+      color: var(--texte-foncé);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      width: 100%;
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2em;
+      font-weight: bold;
+      box-shadow: 0 25px 5px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+    }
+
+    main {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--blanc);
+      border-radius: 12px;
+      box-shadow: 0 25px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: var(--vert-clair);
+    }
+
+    .project-content {
+      padding: 15px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      font-size: 1.3em;
+      margin: 0 0 10px 0;
+      color: var(--vert-secondaire);
+    }
+
+    .project-description {
+      font-size: 1em;
+      line-height: 1.4;
+      color: var(--texte-foncé);
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+
+    .btn-view {
+      display: inline-block;
+      background-color: var(--vert-secondaire);
+      color: var(--blanc);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.5s ease;
+      align-self: flex-start;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .btn-view:hover {
+      background-color: #219150; /* vert plus foncé au survol */
+    }
+
+    footer {
+      width: 100%;
+      background-color: var(--vert-principal);
+      color: var(--blanc);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      margin-top: 50px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5em;
+        padding: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Mes Projets
+  </header>
+
+  <main>
+    <div class="project-card">
+      <img src="IMG-20250701-WA0015.jpg" alt="Projet 1" class="project-image" />
+      <div class="project-content">
+        <h3 class="project-title">Graphic Design</h3>
+        <p class="project-description">
+          Description courte du projet 1.🖼️ Badge ARTHUR & CO
+Description :
+Badge professionnel conçu sous Photoshop avec photo, fonction, et contacts.
+
+Objectif :
+Créer un visuel clair pour l’identification des membres.
+
+Outils :Adobe Photoshop (calques, formes, texte, photo). 
+        </p>
+        <a href="propos.html" class="btn-view">Voir le projet</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="IMG-20250701-WA0016.jpg" alt="Projet 2" class="project-image" />
+      <div class="project-content">
+        <h3 class="project-title">Programmation</h3>
+        <p class="project-description">
+          Description courte du projet 2. 💻 Horloge Digitale – HTML/CSS/JS
+Description :
+Horloge mondiale dynamique affichant l’heure et la date en temps réel.
+
+Objectif :
+Mettre en pratique HTML/CSS/JS dans un projet interactif.
+
+Outils :
+VsCode : HTML, CSS (flex, gradient), JavaScript (Date, setInterval).
+        </p>
+        <a href="citation.html" class="btn-view">Voir le projet</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="IMG-20250701-WA0014.jpg" alt="Projet 3" class="project-image" />
+      <div class="project-content">
+        <h3 class="project-title">Graphic Design</h3>
+        <p class="project-description">
+          Description courte du projet 3. 🎨 Carte de Visite A&CO
+Description :
+Verso de carte de visite avec logo et slogan, style moderne et luxueux.
+
+Objectif :
+Renforcer l’identité visuelle de marque.
+
+Outils :
+Adobe Photoshop (logo, dégradé, typographie).
+        <a href="horloge.html" class="btn-view">Voir le projet</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mr Arthur. Tous droits réservés.
+  </footer>
+
+</body>
+</html>

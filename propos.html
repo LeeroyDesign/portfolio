@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de moi</title>
+    <style>
+        :root {
+                 --vert-principal: #000000;
+            --vert-secondaire: #ffffff;
+            --vert-clair: #072c3b;
+            --texte-foncé: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, var(--vert-clair), #000000);
+            color: var(--texte-foncé);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--vert-principal);
+            color: rgb(255, 254, 254);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 900px;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 30px;
+            border: 5px solid var(--vert-secondaire);
+        }
+
+        .profile-text {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .profile-text h2 {
+            font-size: 2em;
+            color: var(--vert-secondaire);
+            margin-top: 0;
+        }
+
+        .profile-text p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: var(--vert-principal);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile img {
+                margin-bottom: 0;
+            }
+
+            .profile-text {
+                padding: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>À propos de moi</h1>
+    </header>
+
+    <main>
+        <div class="profile">
+            <!-- Remplace l'URL ci-dessous par ta propre photo -->
+            <img src="apropos.jpg" alt="Ma photo">
+            <div class="profile-text">
+                <h2>Mr Arthur</h2>
+                <p>
+                    Bonjour ! 
+                    Je suis Arthur,
+                    derrière chaque ligne de code et chaque forme graphique, il y a une intention. Je construis des univers numériques où design et fonctionnalité ne font qu’un. Le reste, je vous laisse le découvrir...
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Mr Arthur. Tous droits réservés.
+    </footer>
+
+</body>
+</html>

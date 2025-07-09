@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ma To-Do List</title>
+  <style>
+    :root {
+            --vert-principal: #000000;
+            --vert-secondaire: #ffffff;
+            --vert-clair: #072c3b;
+            --texte-foncé: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, var(--vert-clair), #000000);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: var(--texte-foncé);
+    }
+
+    header {
+      background-color: var(--vert-principal);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 1.8em;
+      box-shadow: 0 22px 5px rgba(0,0,0,0.2);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .todo-container {
+      background-color: rgb(0, 0, 0);
+      border-radius: 15px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 22px 15px rgba(0,0,0,0.1);
+    }
+
+    .todo-container h2 {
+      margin-top: 0;
+      color: var(--vert-secondaire);
+    }
+
+    .input-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .input-section input {
+      flex: 1;
+      padding: 10px;
+      font-size: 1em;
+      border: 2px solid var(--vert-secondaire);
+      border-radius: 45px;
+    }
+
+    .input-section button {
+      background-color: var(--vert-secondaire);
+      color: rgb(27, 161, 6);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 45px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .input-section button:hover {
+      background-color: #1e8449;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f0fff5;
+      margin-bottom: 10px;
+      padding: 12px 16px;
+      border-left: 6px solid var(--vert-principal);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    li button {
+      background: none;
+      border: none;
+      color: #c0392b;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: var(--vert-principal);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Ma To-Do List
+  </header>
+
+  <main>
+    <div class="todo-container">
+     <center> <h2>Mes Tâches</h2></center>
+      <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche..." />
+        <button onclick="addTask()">Ajouter</button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mr Arthur. Tous droits réservés.
+  </footer>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <span onclick="toggleDone(this)">${taskText}</span>
+        <button onclick="removeTask(this)">✖</button>
+      `;
+
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+
+    function toggleDone(span) {
+      span.parentElement.classList.toggle("done");
+    }
+
+    function removeTask(btn) {
+      btn.parentElement.remove();
+    }
+
+    // Appuie sur "Entrée" pour ajouter une tâche
+    taskInput.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        addTask();
+      }
+    });
+  </script>
+
+</body>
+</html>
